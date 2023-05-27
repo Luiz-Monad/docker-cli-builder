@@ -13,6 +13,14 @@ jobs:
     runs-on: windows-2019
 
     steps:
+
+    - name: Docker Cache
+      # You may pin to the exact commit or the version.
+      uses: ScribeMD/docker-cache@e7089ca9036c6a9f291d3d7aeecc47149efa6dbf
+      # uses: ScribeMD/docker-cache@0.3.3
+      with:
+        key: always
+    
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag publish:$(date +%s)

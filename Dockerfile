@@ -12,6 +12,7 @@ RUN choco feature disable --name showDownloadProgress
 RUN choco install -y golang -version %GOVERSION%
 RUN choco install -y git
 RUN choco install -y mingw
+RUN choco install -y docker-cli
 
 ENV GOPATH C:\gopath
 RUN git config --global advice.detachedHead false
